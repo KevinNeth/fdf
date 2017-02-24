@@ -6,7 +6,7 @@
 #    By: kneth <kneth@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/22 10:20:20 by kneth             #+#    #+#              #
-#    Updated: 2017/02/22 16:22:00 by kneth            ###   ########.fr        #
+#    Updated: 2017/02/24 16:50:16 by kneth            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = fdf
 
 SRCDIR = srcs
 
-SRC_NAME = fdf.c ft_parsing.c ft_checkmap.c ft_newmap.c
+SRC_NAME =	fdf.c ft_parsing.c ft_checkmap.c ft_newmap.c ft_painter.c \
+			ft_eventmap.c
 
 SRC = $(addprefix ${SRCDIR}/, ${SRC_NAME})
 
@@ -35,14 +36,14 @@ all:${NAME}
 ${NAME}: ${OBJ}
 		@make -C libft/
 		@make -C ${MLX}
-		@echo "__/OOOOOOOOOOOOOO\__/\OOOOOOOOOOO_____/OOOOOOOOOOOOOO\_        "
-		@echo " _\/OO\///////////__\/OO\////////OO\__\/OO\///////////__       "
-		@echo "  _\/OO\_____________\/OO\______\//OO\_\/OO\_____________      "
-		@echo "   _\/OOOOOOOOOO\_____\/OO\_______\/OO\_\/OOOOOOOOOO\_____     "
-		@echo "    _\/OO\///////______\/OO\_______\/OO\_\/OO\///////______    "
-		@echo "     _\/OO\_____________\/OO\_______\/OO\_\/OO\_____________   "
-		@echo "      _\/OO\_____________\/OO\_______/OO\__\/OO\_____________  "
-		@echo "       _\/OO\_____________\/OOOOOOOOOOOO/___\/OO\_____________ "
+		@echo "__/\OOOOOOOOOOOOO\__/\OOOOOOOOOO\_____/\OOOOOOOOOOOOO\_        "
+		@echo " _\/\O\///////////__\/\O\////////\O\__\/\O\///////////__       "
+		@echo "  _\/\O\_____________\/\O\______\//\O\_\/\O\_____________      "
+		@echo "   _\/\OOOOOOOOO\_____\/\O\_______\/\O\_\/\OOOOOOOOO\_____     "
+		@echo "    _\/\O\///////______\/\O\_______\/\O\_\/\O\///////______    "
+		@echo "     _\/\O\_____________\/\O\_______\/\O\_\/\O\_____________   "
+		@echo "      _\/\O\_____________\/\O\_______/\O\__\/\O\_____________  "
+		@echo "       _\/\O\_____________\/\OOOOOOOOOOO/___\/\O\_____________ "
 		@echo "        _\///______________\////////////_____\///______________"
 		@echo "\033[32mIS NOW READY !\033[0m"
 		@${CC} ${CFLAGS} -g -I. -Ilibft/includes/ -I${MLX} -Llibft/ -lft \
