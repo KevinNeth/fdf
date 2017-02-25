@@ -6,7 +6,7 @@
 /*   By: kneth <kneth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/24 16:47:05 by kneth             #+#    #+#             */
-/*   Updated: 2017/02/24 19:43:07 by kneth            ###   ########.fr       */
+/*   Updated: 2017/02/25 15:32:38 by kneth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,18 @@ int		ft_event(int keycode, void *param)
 		// free(param);
 		exit(EXIT_SUCCESS);
 	}
+	if (keycode == 2)
+	{
+		ft_cleanmap(param);
+		((t_mlx*)param)->sz += 1;
+		ft_newmap(param);
+	}
+	if (keycode == 0)
+	{
+		ft_cleanmap(param);
+		((t_mlx*)param)->sz -= 1;
+		ft_newmap(param);
+	}
 	return (0);
 }
 
@@ -34,13 +46,13 @@ int		ft_mouse_event(int button, int x, int y, void *param)
 	if (button == 4)
 	{
 		ft_cleanmap(param);
-		((t_mlx*)param)->scale += 1;
+		((t_mlx*)param)->zoom += 1;
 		ft_newmap(param);
 	}
 	if (button == 5)
 	{
 		ft_cleanmap(param);
-		((t_mlx*)param)->scale -= 1;
+		((t_mlx*)param)->zoom -= 1;
 		ft_newmap(param);
 	}
 	return (0);

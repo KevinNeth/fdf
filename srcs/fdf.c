@@ -6,7 +6,7 @@
 /*   By: kneth <kneth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:19:37 by kneth             #+#    #+#             */
-/*   Updated: 2017/02/24 18:58:08 by kneth            ###   ########.fr       */
+/*   Updated: 2017/02/25 14:37:40 by kneth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void		ft_fdf(char *str)
 		 &info.endian);
 	info.scale = SIZESCALE;
 	info.sz = SIZESZ;
+	info.zoom = SIZEZOOM;
 	ft_newmap(&info);
 	mlx_hook(info.win, 2, 3, ft_event, &info);
 	mlx_mouse_hook(info.win, ft_mouse_event, &info);

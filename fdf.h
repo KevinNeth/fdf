@@ -6,7 +6,7 @@
 /*   By: kneth <kneth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/14 18:45:36 by kneth             #+#    #+#             */
-/*   Updated: 2017/02/24 19:07:54 by kneth            ###   ########.fr       */
+/*   Updated: 2017/02/25 14:54:10 by kneth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ typedef struct		s_mlx
 	int				sl;
 	int				bpp;
 	int				endian;
+	int				zoom;
 	int				scale;
 	int				sz;
 }					t_mlx;
@@ -65,8 +66,10 @@ typedef struct		s_xy
 
 # define SCALE info->scale
 # define SZ info->sz
-# define SIZESCALE 20
-# define SIZESZ 20
+# define ZOOM info->zoom
+# define SIZESCALE 5
+# define SIZESZ 1
+# define SIZEZOOM 1
 
 void				ft_checkvalid(char *str, int *nl, int *nc);
 t_data				**ft_parsing(char *str, t_mlx *info);
