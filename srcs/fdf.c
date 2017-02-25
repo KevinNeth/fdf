@@ -6,7 +6,7 @@
 /*   By: kneth <kneth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:19:37 by kneth             #+#    #+#             */
-/*   Updated: 2017/02/25 19:13:58 by kneth            ###   ########.fr       */
+/*   Updated: 2017/02/25 19:19:02 by kneth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void		ft_default(t_mlx *info)
 	info->scale = SIZESCALE;
 	info->sz = SIZESZ;
 	info->zoom = SIZEZOOM;
+	info->ud = 0;
+	info->rl = 0;
 }
 
 void		ft_fdf(char *str)

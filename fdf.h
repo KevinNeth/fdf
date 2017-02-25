@@ -6,7 +6,7 @@
 /*   By: kneth <kneth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/14 18:45:36 by kneth             #+#    #+#             */
-/*   Updated: 2017/02/25 19:15:31 by kneth            ###   ########.fr       */
+/*   Updated: 2017/02/25 19:18:58 by kneth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ typedef struct		s_mlx
 	int				zoom;
 	int				scale;
 	int				sz;
+	int				ud;
+	int				rl;
 }					t_mlx;
 
 typedef struct		s_bresenham
@@ -67,6 +69,8 @@ typedef struct		s_xy
 # define SCALE info->scale
 # define SZ info->sz
 # define ZOOM info->zoom
+# define UD info->ud
+# define RL info->rl
 # define SIZESCALE 5
 # define SIZESZ 1
 # define SIZEZOOM 1
