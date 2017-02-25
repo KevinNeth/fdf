@@ -6,11 +6,18 @@
 /*   By: kneth <kneth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:19:37 by kneth             #+#    #+#             */
-/*   Updated: 2017/02/25 14:37:40 by kneth            ###   ########.fr       */
+/*   Updated: 2017/02/25 19:13:58 by kneth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
+
+void		ft_default(t_mlx *info)
+{
+	info->scale = SIZESCALE;
+	info->sz = SIZESZ;
+	info->zoom = SIZEZOOM;
+}
 
 void		ft_fdf(char *str)
 {
@@ -23,9 +30,7 @@ void		ft_fdf(char *str)
 	info.img = mlx_new_image(info.mlx, IMAGEX, IMAGEY);
 	info.data = mlx_get_data_addr(info.img, &info.bpp, &info.sl,
 		 &info.endian);
-	info.scale = SIZESCALE;
-	info.sz = SIZESZ;
-	info.zoom = SIZEZOOM;
+	ft_default(&info);
 	ft_newmap(&info);
 	mlx_hook(info.win, 2, 3, ft_event, &info);
 	mlx_mouse_hook(info.win, ft_mouse_event, &info);

@@ -6,7 +6,7 @@
 /*   By: kneth <kneth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/24 16:47:05 by kneth             #+#    #+#             */
-/*   Updated: 2017/02/25 15:32:38 by kneth            ###   ########.fr       */
+/*   Updated: 2017/02/25 19:14:55 by kneth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,12 @@ int		ft_event(int keycode, void *param)
 	{
 		ft_cleanmap(param);
 		((t_mlx*)param)->sz -= 1;
+		ft_newmap(param);
+	}
+	if (keycode == 49)
+	{
+		ft_cleanmap(param);
+		ft_default(param);
 		ft_newmap(param);
 	}
 	return (0);

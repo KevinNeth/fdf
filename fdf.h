@@ -6,7 +6,7 @@
 /*   By: kneth <kneth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/14 18:45:36 by kneth             #+#    #+#             */
-/*   Updated: 2017/02/25 14:54:10 by kneth            ###   ########.fr       */
+/*   Updated: 2017/02/25 19:15:31 by kneth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,11 +79,14 @@ void				ft_printerror(int i);
 int					ft_event(int keycode, void *param);
 int					ft_mouse_event(int button, int x, int y, void *param);
 
-void				ft_cleanmap(t_mlx *info);
 void				ft_put_line(t_mlx *info, t_xy a, t_xy b, int color);
 void				ft_put_pixel(char *data, int sl, int x, int y, int color);
 void				ft_printer_hor(t_mlx *info, int i, int j, int color);
 void				ft_printer_ver(t_mlx *info, int i, int j, int color);
+
+void				ft_default(t_mlx *info);
+
+void				ft_cleanmap(t_mlx *info);
 void				ft_newmap(t_mlx *info);
 
 void				ft_errors();
