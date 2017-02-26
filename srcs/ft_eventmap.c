@@ -6,7 +6,7 @@
 /*   By: kneth <kneth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/24 16:47:05 by kneth             #+#    #+#             */
-/*   Updated: 2017/02/25 19:25:21 by kneth            ###   ########.fr       */
+/*   Updated: 2017/02/26 09:58:22 by kneth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ int		ft_event(int keycode, void *param)
 		// free(param);
 		exit(EXIT_SUCCESS);
 	}
-	if (keycode == 2)
+	if (keycode == 13)
 	{
 		ft_cleanmap(param);
 		((t_mlx*)param)->sz += 1;
 		ft_newmap(param);
 	}
-	if (keycode == 0)
+	if (keycode == 1)
 	{
 		ft_cleanmap(param);
 		((t_mlx*)param)->sz -= 1;
@@ -43,25 +43,25 @@ int		ft_event(int keycode, void *param)
 	if (keycode == 126)
 	{
 		ft_cleanmap(param);
-		((t_mlx*)param)->ud -= 1;
+		((t_mlx*)param)->ud -= 3;
 		ft_newmap(param);
 	}
 	if (keycode == 125)
 	{
 		ft_cleanmap(param);
-		((t_mlx*)param)->ud += 1;
+		((t_mlx*)param)->ud += 3;
 		ft_newmap(param);
 	}
 	if (keycode == 124)
 	{
 		ft_cleanmap(param);
-		((t_mlx*)param)->rl += 1;
+		((t_mlx*)param)->rl += 3;
 		ft_newmap(param);
 	}
 	if (keycode == 123)
 	{
 		ft_cleanmap(param);
-		((t_mlx*)param)->rl -= 1;
+		((t_mlx*)param)->rl -= 3;
 		ft_newmap(param);
 	}
 	return (0);
