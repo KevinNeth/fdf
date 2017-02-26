@@ -6,7 +6,7 @@
 /*   By: kneth <kneth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/14 18:45:36 by kneth             #+#    #+#             */
-/*   Updated: 2017/02/25 19:18:58 by kneth            ###   ########.fr       */
+/*   Updated: 2017/02/26 11:53:42 by kneth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ typedef struct		s_xy
 {
 	int				x;
 	int				y;
+	int				color;
 }					t_xy;
 
 # define SCALE info->scale
@@ -85,6 +86,8 @@ int					ft_mouse_event(int button, int x, int y, void *param);
 
 void				ft_put_line(t_mlx *info, t_xy a, t_xy b, int color);
 void				ft_put_pixel(char *data, int sl, int x, int y, int color);
+int					ft_put_color(t_mlx *info, int col1, int col2, int color);
+
 void				ft_printer_hor(t_mlx *info, int i, int j, int color);
 void				ft_printer_ver(t_mlx *info, int i, int j, int color);
 

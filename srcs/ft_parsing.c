@@ -6,7 +6,7 @@
 /*   By: kneth <kneth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/14 18:51:01 by kneth             #+#    #+#             */
-/*   Updated: 2017/02/22 16:21:01 by kneth            ###   ########.fr       */
+/*   Updated: 2017/02/26 11:14:30 by kneth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void		ft_col(t_data **pos, char **str, int *i, int *j)
 		ft_color(pos, str, i, j);
 	}
 	else
-		pos[*i][*j].color = -1;
+		pos[*i][*j].color = 0xffffff;
 	(*j)++;
 }
 
