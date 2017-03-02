@@ -6,7 +6,7 @@
 /*   By: kneth <kneth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/14 18:40:31 by kneth             #+#    #+#             */
-/*   Updated: 2017/02/22 16:06:30 by kneth            ###   ########.fr       */
+/*   Updated: 2017/03/02 18:46:07 by kneth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,10 @@ static void		ft_checkcolor(char *str, int *i)
 		count++;
 	}
 	if (count != 6)
+	{
+		printf("%s\n", "ici ?");
 		ft_printerror(-3);
+	}
 }
 
 static void		ft_checkcol(int *save, int *nl, int *nc)

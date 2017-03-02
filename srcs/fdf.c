@@ -6,7 +6,7 @@
 /*   By: kneth <kneth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:19:37 by kneth             #+#    #+#             */
-/*   Updated: 2017/02/25 19:19:02 by kneth            ###   ########.fr       */
+/*   Updated: 2017/03/02 18:21:30 by kneth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void		ft_default(t_mlx *info)
 {
 	info->scale = SIZESCALE;
 	info->sz = SIZESZ;
-	info->zoom = SIZEZOOM;
 	info->ud = 0;
 	info->rl = 0;
 }
@@ -28,7 +27,7 @@ void		ft_fdf(char *str)
 	ft_bzero(&info, sizeof(t_mlx));
 	info.coord = ft_parsing(str, &info);
 	info.mlx = mlx_init();
-	info.win = mlx_new_window(info.mlx, 1000, 1000, "SDF !");
+	info.win = mlx_new_window(info.mlx, WINX, WINY, "FDF !");
 	info.img = mlx_new_image(info.mlx, IMAGEX, IMAGEY);
 	info.data = mlx_get_data_addr(info.img, &info.bpp, &info.sl,
 		 &info.endian);
@@ -60,8 +59,8 @@ int			main(int ac, char **av)
 		tab = ft_strjoin(tmp, "\n");
 		free(tmp);
 	}
-	if (!tab)
-		return (0);
+	if (*tab == '\0' || *tab == '\n')
+		ft_printerror(-1);
 	ft_fdf(tab);
 	return (0);
 }

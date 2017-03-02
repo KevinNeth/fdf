@@ -6,7 +6,7 @@
 /*   By: kneth <kneth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/14 18:45:36 by kneth             #+#    #+#             */
-/*   Updated: 2017/02/26 11:53:42 by kneth            ###   ########.fr       */
+/*   Updated: 2017/03/02 10:41:11 by kneth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 #include <stdlib.h>// a virer
 
 # define TRANSLATION 100
+# define WINX 1000
+# define WINY 1000
 # define IMAGEX 1000
 # define IMAGEY 1000
 
@@ -43,7 +45,6 @@ typedef struct		s_mlx
 	int				sl;
 	int				bpp;
 	int				endian;
-	int				zoom;
 	int				scale;
 	int				sz;
 	int				ud;
@@ -67,14 +68,19 @@ typedef struct		s_xy
 	int				color;
 }					t_xy;
 
+typedef struct		s_col
+{
+	int			r;
+	int			g;
+	int			b;
+}					t_col;
+
 # define SCALE info->scale
 # define SZ info->sz
-# define ZOOM info->zoom
 # define UD info->ud
 # define RL info->rl
 # define SIZESCALE 5
 # define SIZESZ 1
-# define SIZEZOOM 1
 
 void				ft_checkvalid(char *str, int *nl, int *nc);
 t_data				**ft_parsing(char *str, t_mlx *info);
@@ -86,7 +92,7 @@ int					ft_mouse_event(int button, int x, int y, void *param);
 
 void				ft_put_line(t_mlx *info, t_xy a, t_xy b, int color);
 void				ft_put_pixel(char *data, int sl, int x, int y, int color);
-int					ft_put_color(t_mlx *info, int col1, int col2, int color);
+int					ft_put_color(t_xy a, t_xy b);
 
 void				ft_printer_hor(t_mlx *info, int i, int j, int color);
 void				ft_printer_ver(t_mlx *info, int i, int j, int color);
