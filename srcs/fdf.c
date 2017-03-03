@@ -6,7 +6,7 @@
 /*   By: kneth <kneth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/11 15:19:37 by kneth             #+#    #+#             */
-/*   Updated: 2017/03/02 18:21:30 by kneth            ###   ########.fr       */
+/*   Updated: 2017/03/03 11:31:27 by kneth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int			main(int ac, char **av)
 	if (ac < 2)
 		ft_printerror(-1);
 	if ((fd = open(av[1], O_RDONLY)) < 0)
-		return (0);
+		ft_printerror(-1);
 	tab = ft_strnew(0);
 	while ((get_next_line(fd, &line)) > 0)
 	{

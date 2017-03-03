@@ -6,7 +6,7 @@
 /*   By: kneth <kneth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/14 18:51:01 by kneth             #+#    #+#             */
-/*   Updated: 2017/02/26 11:14:30 by kneth            ###   ########.fr       */
+/*   Updated: 2017/03/03 14:23:13 by kneth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 static void		ft_color(t_data **pos, char **str, int *i, int *j)
 {
-	if (**str == '0')
-		(*str)++;
-	if (**str == 'x')
-		(*str)++;
+	if (**str == '0' && *(*str + 1) == 'x')
+		*str += 2;
 	pos[*i][*j].color = ft_atoi_base(*str, 16);
 	*str += 6;
 }
@@ -28,6 +26,11 @@ static void		ft_col(t_data **pos, char **str, int *i, int *j)
 		(*str)++;
 	if (ft_isdigit(**str) || **str == '-')
 		pos[*i][*j].z = ft_atoi(*str);
+	if (pos[*i][*j].z > 50000)
+		pos[*i][*j].z = 50000;
+	if (pos[*i][*j].z < -50000)
+		pos[*i][*j].z = -50000;
+	printf("%d\n", pos[*i][*j].z);
 	pos[*i][*j].x = *j;
 	pos[*i][*j].y = *i;
 	while (ft_isdigit(**str) || **str == '-')

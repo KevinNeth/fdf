@@ -6,7 +6,7 @@
 /*   By: kneth <kneth@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/14 18:40:31 by kneth             #+#    #+#             */
-/*   Updated: 2017/03/02 18:46:07 by kneth            ###   ########.fr       */
+/*   Updated: 2017/03/03 11:06:01 by kneth            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 void		ft_printerror(int i)
 {
 	if (i == -1)
-		printf("%s\n", "No map O_O");
+		ft_putendl_fd("No map O_O", 2);
 	if (i == -2)
-		printf("%s\n", "Map invalide ;(");
+		ft_putendl_fd("Map invalide ;(", 2);
 	if (i == -3)
-		printf("%s\n", "Code couleur invalide ;O");
+		ft_putendl_fd("Code couleur invalide ;O", 2);
 	if (i == -42)
-		printf("%s\n", "Erreur Malloc ;X");
+		ft_putendl_fd("Erreur Malloc ;X", 2);
 	exit (-1);
 }
 
@@ -30,20 +30,16 @@ static void		ft_checkcolor(char *str, int *i)
 	int	count;
 
 	count = 0;
-	if (str[*i] == '0')
-		(*i)++;
-	if (str[*i] == 'x')
-		(*i)++;
-	while (ft_isdigit(str[*i]) || (str[*i] > 64 && str[*i] < 71))
+	if (str[*i] == '0' && str[*i + 1] == 'x')
+		*i += 2;
+	while (ft_isdigit(str[*i]) || (str[*i] > 64 && str[*i] < 71) ||
+		(str[*i] > 96 && str[*i] < 103))
 	{
 		(*i)++;
 		count++;
 	}
 	if (count != 6)
-	{
-		printf("%s\n", "ici ?");
 		ft_printerror(-3);
-	}
 }
 
 static void		ft_checkcol(int *save, int *nl, int *nc)
@@ -86,5 +82,5 @@ void			ft_checkvalid(char *str, int *nc, int *nl)
 			ft_checkcol(&save, nl, nc);
 	}
 	*nc = save;
-	printf("%s\n", "Map valide =D");//a virer
+	ft_putendl("Map valide =D");
 }
